@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Application</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Task Management Application</h1>
+        <!-- Task List -->
+        <div id="task-list">
+            <!-- Tasks will be dynamically added here -->
+        </div>
+        <!-- Add Task Button -->
+        <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#addTaskModal">Add Task</button>
+    </div>
+
+    <!-- Modal for Add Task -->
+    <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTaskModalLabel">Add New Task</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form for adding new task -->
+                    <form id="addTaskForm">
+                        <div class="form-group">
+                            <label for="taskTitle">Title</label>
+                            <input type="text" class="form-control" id="taskTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskDescription">Description</label>
+                            <textarea class="form-control" id="taskDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="dueDate">Due Date</label>
+                            <input type="date" class="form-control" id="dueDate" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Task</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Task Details -->
+    <div class="modal fade" id="taskDetailsModal" tabindex="-1" role="dialog" aria-labelledby="taskDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="taskDetailsModalLabel">Task Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Task details will be shown here -->
+                    <div id="taskDetails">
+                        <h5>Title: <span id="detailsTitle"></span></h5>
+                        <p>Description: <span id="detailsDescription"></span></p>
+                        <p>Due Date: <span id="detailsDueDate"></span></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="editTaskBtn">Edit Task</button>
+                    <button type="button" class="btn btn-danger" id="deleteTaskBtn">Delete Task</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="p.js"></script>
+</body>
+
+</html>
